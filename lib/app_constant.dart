@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 
 const String fruitsImg = 'assets/images/04.png';
 
-
-
-
-
 class CustomeBanner extends StatelessWidget {
 
   Color background;

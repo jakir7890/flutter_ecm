@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                 elevation: 10,
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10),
                       color: Colors.black,
                       image: DecorationImage(image: AssetImage(fruitsImg))),
                 ),
