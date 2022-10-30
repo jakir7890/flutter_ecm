@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/bottom_pages/bottom_nav_controller.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main(List<String> args) {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  Box box;
+
   runApp(MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

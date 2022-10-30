@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
           body: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 5, crossAxisSpacing: 5, crossAxisCount: 2),
-            itemCount: 8,
+            itemCount: 14,
             itemBuilder: ((context, index) {
               return Card(
                 elevation: 10,
