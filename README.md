@@ -1,3 +1,3 @@
 ### Thsi is a Ecommerce flutter app
-<img ./ss.jpg>
+<img src="ss/ss.jpg" width="600">
 
