@@ -8,24 +8,18 @@ class AddScreen extends StatefulWidget {
 }
 
 class _AddScreenState extends State<AddScreen> {
-
-// @override
-// void initState() {
-//   super.initState();
-//   _updateController =  contactBox!.getAt(widget.);
-// }
-
-
   TextEditingController _controller = TextEditingController();
-  TextEditingController _updateController = TextEditingController(text: 'Hello');
+  TextEditingController _updateController = TextEditingController();
 
   Box? contactBox;
- 
-
+  @override
+  void initState() {
+    super.initState();
+    contactBox = Hive.box('contact-box');
+  }
 
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
         body: GestureDetector(
@@ -39,7 +33,6 @@ class _AddScreenState extends State<AddScreen> {
                 TextFormField(
                   controller: _controller,
                   decoration: InputDecoration(
-                    
                       hintText: 'Enter your Data',
                       border: OutlineInputBorder()),
                 ),
@@ -76,6 +69,8 @@ class _AddScreenState extends State<AddScreen> {
                                   IconButton(
                                       tooltip: 'Edit your data',
                                       onPressed: () async {
+                                        _updateController.text =
+                                            contactBox!.getAt(index).toString();
                                         showDialog(
                                             context: context,
                                             builder: (_) {
@@ -89,7 +84,6 @@ class _AddScreenState extends State<AddScreen> {
                                                     child: Column(
                                                       children: [
                                                         TextFormField(
-                                                         
                                                           controller:
                                                               _updateController,
                                                           decoration: InputDecoration(
@@ -104,12 +98,12 @@ class _AddScreenState extends State<AddScreen> {
                                                           child: ElevatedButton(
                                                               onPressed:
                                                                   () async {
-                                                                final updateData =
+                                                                final updateInput =
                                                                     _updateController
                                                                         .text;
                                                                 contactBox!.putAt(
                                                                     index,
-                                                                    updateData);
+                                                                    updateInput);
                                                                 _updateController
                                                                     .clear();
                                                                 Navigator.pop(
